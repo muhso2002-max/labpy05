@@ -1,189 +1,135 @@
 # Flowchart
 
-                     ┌─────────────────────────┐
-                     │        MULAI            │
-                     └───────────────┬─────────┘
-                                     │
-                                     ▼
                          ┌─────────────────────────┐
-                         │ Inisialisasi data = {}  │
+                         │          MULAI          │
                          └───────────────┬─────────┘
                                          │
                                          ▼
-                         ┌────────────────────────────────┐
-                         │      Tampilkan Menu:           │
-                         │ 1. Tambah Data                 │
-                         │ 2. Ubah Data                   │
-                         │ 3. Hapus Data                  │
-                         │ 4. Tampilkan Data              │
-                         │ 5. Cari Data                   │
-                         │ 0. Keluar                      │
-                         └───────────────┬────────────────┘
-                                         │
-                                         ▼
-                         ┌───────────────────────────┐
-                         │    Input pilihan menu     │
-                         └───────────────┬───────────┘
-                                         │
-     ┌───────────────────────────────────┼─────────────────────────────────────┐
-     │                                   │                                     │
-     ▼                                   ▼                                     ▼
+                             ┌─────────────────────────┐
+                             │   Inisialisasi data = {}│
+                             └───────────────┬─────────┘
+                                             │
+                                             ▼
+                             ┌────────────────────────────────┐
+                             │            MENU:               │
+                             │ 1. Tambah Data                 │
+                             │ 2. Ubah Data                   │
+                             │ 3. Hapus Data                  │
+                             │ 4. Lihat Data                  │
+                             │ 5. Cari Data                   │
+                             │ 6. Keluar                      │
+                             └───────────────┬────────────────┘
+                                             │
+                                             ▼
+                             ┌───────────────────────────┐
+                             │     Input pilihan menu    │
+                             └───────────────┬───────────┘
+                                             │
+         ┌───────────────────────────────────┼─────────────────────────────────────┐
+         │                                   │                                     │
+         ▼                                   ▼                                     ▼
 
-┌──────────────┐ ┌────────────────┐ ┌──────────────────┐
-│ Pilihan = 1? │─Yes──────────▶ │ TAMBAH DATA │ │ Pilihan = 2? │
-└───────┬──────┘ └───┬────────────┘ └───────┬──────────┘
-│ │ │
-│ ▼ ▼
-│ ┌───────────────────┐ ┌───────────────────┐
-│ │ Input NIM │ │ UBAH DATA │
-│ │ Input Nama │ └───────┬───────────┘
-│ │ Input Tugas │ │
-│ │ Input UTS │ ▼
-│ │ Input UAS │ ┌────────────────────────┐
-│ │ Hitung NilaiAkhir │ │ Input NIM │
-│ │ Simpan ke dict │ │ Jika ketemu → ubah │
-│ └───────────────────┘ │ Jika tidak → error │
-│ │ └────────────────────────┘
-│ ▼ │
-│ ┌────────────────┐ │
-│ │ Kembali ke menu│◀─────────────────────────────┘
-│ └────────────────┘
-│
-│
-▼
-┌──────────────┐
-│ Pilihan = 3? │─────────Yes───────────────▶ HAPUS DATA
-└───────┬──────┘ │
-│ ▼
-│ ┌────────────────────────┐
-│ │ Input NIM │
-│ │ Jika ketemu → hapus │
-│ │ Jika tidak → error │
-│ └────────────────────────┘
-│ │
-│ ▼
-│ Kembali ke menu
-│
-▼
-┌──────────────┐
-│ Pilihan = 4? │─────────Yes──────────────▶ TAMPILKAN DATA
-└───────┬──────┘ │
-│ ▼
-│ ┌──────────────────────────┐
-│ │ Cetak seluruh isi dict │
-│ │ Jika kosong → tampilkan │
-│ │ pesan "tidak ada data" │
-│ └──────────────────────────┘
-│ │
-│ ▼
-│ Kembali ke menu
-│
-▼
-┌──────────────┐
-│ Pilihan = 5? │─────────Yes──────────────▶ CARI DATA
-└───────┬──────┘ │
-│ ▼
-│ ┌──────────────────────────┐
-│ │ Input NIM │
-│ │ Jika ketemu → tampilkan │
-│ │ Jika tidak → error │
-│ └──────────────────────────┘
-│ │
-│ ▼
-│ Kembali ke menu
-│
-▼
-┌──────────────┐
-│ Pilihan = 0? │─────────Yes──────────────▶ SELESAI
-└───────┬──────┘
-│
-▼
-┌──────────────────────────┐
-│ Tampilkan "Salah!" │
-│ Kembali ke menu │
-└──────────────────────────┘
+    ┌──────────────┐         ┌────────────────┐           ┌──────────────────┐
+    │ Pilihan = 1? │─Yes───▶ │  TAMBAH DATA   │           │  Pilihan = 2?    │
+    └───────┬──────┘         └──────┬─────────┘           └─────────┬────────┘
+            │                        │                               │
+            ▼                        ▼                               ▼
+    ┌───────────────────┐   ┌──────────────────────┐        ┌───────────────────┐
+    │ Input NIM          │   │ UBAH DATA            │        │ Input NIM         │
+    │ Input Nama         │   └──────────┬───────────┘        │ Jika ada → ubah  │
+    │ Input Tugas        │              │                    │ Jika tidak → err │
+    │ Input UTS          │              ▼                    └───────────────────┘
+    │ Input UAS          │   ┌────────────────────────┐               │
+    │ Hitung Nilai Akhir │   │ Jika ketemu → update   │               ▼
+    │ Simpan ke dict     │   │ Jika tidak → error     │       Kembali ke Menu
+    └───────────────────┘   └────────────────────────┘
 
-# Penjelasan
+    ▼
+    ┌──────────────┐
+    │ Pilihan = 3? │──Yes──────────────────────────────▶ HAPUS DATA
+    └───────┬──────┘
+            │
+            ▼
+    ┌────────────────────────┐
+    │ Input NIM              │
+    │ Jika ketemu → hapus    │
+    │ Jika tidak → error     │
+    └────────────────────────┘
+            ▼
+       Kembali ke menu
 
-1.  Mulai Program
-    Program dimulai dan melakukan inisialisasi dictionary kosong:
-    data = {}
-    Dictionary ini akan menyimpan semua data mahasiswa dengan format:
-    data[nim] = {
-    "nama": "...",
-    "tugas": ...,
-    "uts": ...,
-    "uas": ...,
-    "akhir": ...
-    }
+    ▼
+    ┌──────────────┐
+    │ Pilihan = 4? │──Yes────────────────────────────▶ TAMPILKAN DATA
+    └───────┬──────┘
+            │
+            ▼
+    ┌──────────────────────────┐
+    │ Cetak seluruh isi data   │
+    │ Jika kosong → "No data"  │
+    └──────────────────────────┘
+            ▼
+       Kembali ke menu
 
-2.  Tampilkan Menu
-    Program akan menampilkan pilihan:
-    Tambah Data
-    Ubah Data
-    Hapus Data
-    Tampilkan Data
-    Cari Data
-    Keluar
-    Pengguna harus memilih salah satu nomor.
+    ▼
+    ┌──────────────┐
+    │ Pilihan = 5? │──Yes────────────────────────────▶ CARI DATA
+    └───────┬──────┘
+            │
+            ▼
+    ┌──────────────────────────┐
+    │ Input NIM                │
+    │ Jika ada → tampilkan     │
+    │ Jika tidak → error       │
+    └──────────────────────────┘
+            ▼
+       Kembali ke menu
 
-3.  Input Pilihan Menu
-    User memasukkan angka menu.
-    Program kemudian mengecek pilihan tersebut:
+    ▼
+    ┌──────────────┐
+    │ Pilihan = 6? │──Yes────────────▶ SELESAI
+    └───────┬──────┘
+            │
+            ▼
+    ┌──────────────────────────┐
+    │     Input salah!         │
+    │     Kembali ke menu      │
+    └──────────────────────────┘
 
-4.  Jika Pilihan = 1 → Tambah Data
-    Pada menu ini program:
-    Meminta input:
-    NIM
-    Nama
-    Nilai Tugas
-    Nilai UTS
-    Nilai UAS
-    Menghitung nilai akhir:
-    akhir = tugas*0.30 + uts*0.35 + uas\*0.35
-    Menyimpan data ke dalam dictionary.
-    Setelah selesai → kembali ke menu.
+## Penjelasan Program
 
-5.  Jika Pilihan = 2 → Ubah Data
-    Pada menu ini:
-    User memasukkan NIM
-    Program mengecek apakah NIM ada dalam dictionary
-    Jika ADA → user diminta memasukkan data baru (nama, tugas, uts, uas)
-    Nilai akhir dihitung ulang
-    Data diperbarui
-    Tampilkan pesan sukses
-    Kembali ke menu
-    Jika TIDAK ADA → tampilkan pesan error
-    “Data tidak ditemukan”
+1.  **Mulai Program**\
+    Inisialisasi dictionary kosong `data = {}` untuk menyimpan data
+    mahasiswa.
 
-6.  Jika Pilihan = 3 → Hapus Data
-    Alurnya:
-    User memasukkan NIM
-    Program mencari NIM di dictionary
-    Jika ADA → data dihapus
-    Jika TIDAK ADA → tampilkan pesan error
+2.  **Tampilkan Menu**\
+    Menampilkan pilihan: Tambah, Ubah, Hapus, Tampilkan, Cari, Keluar.
 
-7.  Jika Pilihan = 4 → Tampilkan Semua Data
-    Program akan:
-    Mengecek apakah dictionary kosong
-    Jika kosong → tampilkan pesan: “Tidak ada data!”
-    Jika ada → tampilkan seluruh daftar mahasiswa
-    Lalu kembali ke menu.
+3.  **Input Pilihan Menu**\
+    User memilih menu dan program mengecek angka tersebut.
 
-8.  Jika Pilihan = 5 → Cari Data
-    Alur:
-    User memasukkan NIM
-    Program mencari NIM tersebut
-    Jika ADA → tampilkan detail mahasiswa
-    Jika TIDAK ADA → tampilkan pesan error
-    Kembali ke menu.
+4.  **Tambah Data**\
+    Input NIM, Nama, Tugas, UTS, UAS → hitung nilai akhir → simpan ke
+    dictionary.
 
-9.  Jika Pilihan = 0 → Keluar Program
-    Program berhenti dan menampilkan pesan:
-    Program selesai.
+5.  **Ubah Data**\
+    Input NIM → jika ada datanya, diperbarui → nilai akhir dihitung
+    ulang.
 
-10. Jika Input Tidak Valid
-    Jika user memasukkan angka selain 0–5:
-    Tampilkan pesan “Menu tidak valid!”
-    Kembali ke menu utama
+6.  **Hapus Data**\
+    Input NIM → jika ditemukan, data dihapus.
 
+7.  **Tampilkan Semua Data**\
+    Jika data kosong → tampilkan pesan. Jika ada → tampilkan seluruh isi
+    dictionary.
+
+8.  **Cari Data**\
+    Input NIM → tampilkan data jika ada, jika tidak muncul pesan error.
+
+9.  **Keluar Program**\
+    Program berhenti.
+
+10. **Input Tidak Valid**\
+    Jika pilihan di luar 0--5 → tampilkan pesan error.
+
+    
