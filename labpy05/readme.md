@@ -1,9 +1,3 @@
-# Tugas-Pertemuan_10
-
-# Arthur-Adam-Radhitya
-
-# 312510233
-
 # Flowchart
 
                      ┌─────────────────────────┐
@@ -192,3 +186,4 @@
     Jika user memasukkan angka selain 0–5:
     Tampilkan pesan “Menu tidak valid!”
     Kembali ke menu utama
+
